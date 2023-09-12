@@ -1,15 +1,14 @@
 package oop;
 
 public class A {
-    String name;
-    Integer age;
+    String name ="Tipu";
+    Integer age = 26;
 
-//    @Override
-//    Boolean equals( B b){
-//        if(this.name.equals(b.name) && (this.age.equals(b.age))){
-//            return  true;
-//        }
-//        else
-//            return false;
-//    }
+    @Override
+    public String toString() {
+        return "A{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }

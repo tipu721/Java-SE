@@ -1,2 +1,4 @@
-package generics;public class Main {
+package generics;
+
+public class Main {
 }
