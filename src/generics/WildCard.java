@@ -1,14 +1,31 @@
 package generics;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class WildCard {
 
+    //unbounded
+    static void printUnboundedList(List<?>numbers){
+        for(Object o : numbers){
+            System.out.println(o);
+        }
+
+    }
+    //uper bounded
     static void printList(List<? extends Number> numbers){
         for(Number n : numbers){
             System.out.println(n);
         }
+    }
+
+    //lower bounded
+    static void printLowerbounded(List<? super Integer>lowerList){
+        for(Object o : lowerList){
+            System.out.println(o);
+        }
+
     }
     public static void main(String[] args) {
         //List with number
@@ -35,6 +52,29 @@ public class WildCard {
 
         printList(myIntList);
         printList(myDoubleList);
+
+        //unbounded wirld card
+        List<String>myStringList = new ArrayList<>();
+        List<Integer>myIntegerList = new ArrayList<>();
+
+        myStringList.add("Unbounded1");
+        myStringList.add("Unbounded2");
+        printUnboundedList(myStringList);
+        myIntegerList.add(8);
+        myIntegerList.add(9);
+        printUnboundedList(myIntegerList);
+
+
+        //lowerBounded
+        List<Integer>myList = new ArrayList<>();
+        List<Object>objectList = new ArrayList<>();
+        myList.add(5);
+        myList.add(6);
+        objectList.add("Tipu");
+        objectList.add("Sultan");
+        objectList.add("123");
+        printLowerbounded(myList);
+        printLowerbounded(objectList);
 
 
 
